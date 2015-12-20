@@ -1,0 +1,12 @@
+#IDE files
+**/.idea/workspace.xml **/.idea/tasks.xml
+
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+assets/bower_components
+
+# Created by .ignore support plugin (hsz.mobi)
+
+nids.json
+pins.json

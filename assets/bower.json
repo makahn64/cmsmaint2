@@ -1,0 +1,25 @@
+{
+  "name": "assets",
+  "version": "0.0.0",
+  "authors": [
+    "atorres <torres.lyssa@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "angular-route": "~1.4.6",
+    "lodash": "~3.10.1",
+    "bootstrap": "~3.3.5",
+    "ui-bootstrap": "~0.13.4",
+    "angular-bootstrap": "~0.13.4",
+    "Chart.js": "~1.0.2",
+    "angular-chart.js": "~0.8.4"
+  }
+}

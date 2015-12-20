@@ -1,0 +1,57 @@
+<div class="container-fluid" ng-show="!readyToMigrate && ready">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h1>Destination CMS Authorization</h1>
+            <p>{{ui.message}}</p>
+            <div class="form-inline">
+                <input class="input-lg" style="width: 100%" type="text" ng-model="cms.url" placeholder="API Base URL"/><br>
+                <input class="input-lg" type="text" style="width: 100%" ng-model="cms.username" placeholder="Username"/><br>
+
+                <input class="input-lg" style="width: 100%" type="password" ng-model="cms.pwd" placeholder="Password"/>
+                <button class="btn btn-default btn-lg" ng-click="authorize()" >Log In</button>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+<div class="container-fluid" ng-show="readyToMigrate && ready">
+    <div class="row" ng-show="readyToMigrate">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+            <h1 style="display: inline;">Migrate&nbsp;&nbsp;&nbsp;</h1>
+            <img style="display:inline; position:relative; top:-10px;" ng-show="ui.running" src="assets/img/spinner.gif">
+            <br><br>
+
+            <div class="form-inline" ng-show="ui.showButton">
+                <input class="input-lg" style="width: 75%" type="text" ng-model="snapshot.dir"
+                       placeholder="Location of Snapshot" disabled/>
+                <button style="margin-top:0" class="btn btn-default btn-lg" ng-click="chooseDir()">
+                    Choose
+                </button>
+            </div>
+            <br><br>
+
+            <button class="btn btn-default btn-lg" ng-show="ui.showButton" ng-click="begin()">Start Migration</button>
+
+            <h3>{{ui.status}}</h3>
+            <button class="btn btn-default btn-lg" ng-show="showNextButton" ng-click="migrateNode(node)">Migrate next node</button>
+            <h3 ng-show="ui.migrating">
+                <b>Current node</b> <br>
+                title:&nbsp;&nbsp;{{ui.ntitle}}<br>
+                nid:&nbsp;&nbsp;{{ui.nid}}
+            </h3>
+            <h3 ng-show="ui.uploading && ui.migrating">
+                <b>Uploading file</b>&nbsp;&nbsp;&nbsp;{{$root.uploadProgress}}%<br>
+                name:&nbsp;&nbsp;{{ui.fname}}<br>
+                type:&nbsp;&nbsp;{{ui.ftype}}<br>
+                size:&nbsp;&nbsp;{{ui.fsize}} MB
+            </h3>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</div>

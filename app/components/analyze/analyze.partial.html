@@ -1,0 +1,41 @@
+<div class="container-fluid" ng-show="ready">
+  <div class="row">
+    <div class="col-md-12">
+      <div ng-show="globalUser.loggedIn">
+        <div class="col-md-2"></div>
+        <!-- This div is the actual content -->
+        <div class="col-md-8">
+          <h1>CMS Analysis</h1>
+
+          <h3>{{ui.statusMain}}</h3>
+          <button class="btn btn-default" ng-click="begin()" ng-hide="ui.running">Let's Do This</button>
+           <canvas id="doughnut" class="chart chart-pie"
+                    chart-data="donutdata" chart-labels="donutlabels">
+            </canvas>
+          <div class="table-condensed" ng-show="ui.running">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Content Type</th>
+                <th>Node Count</th>
+              </tr>
+              </thead>
+              <tr ng-repeat="(key, value) in counts">
+                <td> {{key}}</td>
+                <td> {{ value }}</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div ng-show="!globalUser.loggedIn">&nbsp;Please log in to perform this function.</div>
+</div>

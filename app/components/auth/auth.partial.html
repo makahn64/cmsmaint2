@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h1>Source CMS Authorization</h1>
+
+      <div ng-show="ui.showMessage">
+        <p>{{ui.message}}.</p>
+        <button class="btn btn-default btn-lg" ng-click="deauthorize()">Log Out</button>
+
+      </div>
+      <div class="form-inline" ng-show="ui.showLoginBox">
+        <p>{{ui.loginMsg}}</p>
+        <input class="input-lg" style="width: 100%" type="text" ng-model="cms.url" placeholder="API Base URL"/><br>
+        <input class="input-lg" type="text" style="width: 100%" ng-model="cms.username" placeholder="Username"/><br>
+
+        <input class="input-lg" style="width: 100%" type="password" ng-model="cms.pwd" placeholder="Password"/>
+        <button class="btn btn-default btn-lg" ng-click="authorize()">Log In</button>
+      </div>
+
+      <div class="well" ng-show="ui.showUserInfo">
+        <h3>User Info</h3>
+
+        <p><b>User:&nbsp</b>{{user.name}}</p>
+      </div>
+
+    </div>
+    <div class="col-md-3"></div>
+
+  </div>
+</div>
+

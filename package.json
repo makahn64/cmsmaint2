@@ -1,0 +1,19 @@
+{
+  "main": "index.html",
+  "name": "VisaCMSTranslator",
+  "version": "0.0.1",
+  "description": "Translates Version 1.1 Content Types to Version 1.2 Content Types",
+  "nodejs": true,
+  "chromium-args": "--disable-web-security",
+  "window": {
+    "title": "NWApp",
+    "always-on-top": false,
+    "width": 1300,
+    "height": 700
+  },
+  "dependencies": {
+    "fs-extra": "^0.24.0",
+    "jsonfile": "^2.2.3",
+    "superagent": "^1.4.0"
+  }
+}
